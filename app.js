@@ -25,28 +25,6 @@ if (yearButtons.length) {
   yearButtons.forEach(button => button.addEventListener("click", () => showYear(button.dataset.year)));
 }
 
-const copyButton = document.getElementById("copy-command");
-let copyTimer;
-copyButton?.addEventListener("click", async () => {
-  const status = document.getElementById("copy-status");
-  try {
-    await navigator.clipboard.writeText("/고정일정");
-    copyButton.textContent = "복사 완료 ✓";
-    status.textContent = "명령어를 복사했습니다. RP 대화에 붙여 넣으세요.";
-  } catch {
-    copyButton.textContent = "명령어 직접 선택";
-    const command = document.querySelector(".command-help code");
-    const selection = window.getSelection();
-    const range = document.createRange();
-    range.selectNodeContents(command);
-    selection.removeAllRanges();
-    selection.addRange(range);
-    status.textContent = "자동 복사를 사용할 수 없습니다. 선택된 /고정일정 명령어를 직접 복사하세요.";
-  }
-  clearTimeout(copyTimer);
-  copyTimer = setTimeout(() => { copyButton.innerHTML = '명령어 복사 <span aria-hidden="true">↗</span>'; }, 3500);
-});
-
 const drawer = document.getElementById("bencroft-dialog");
 let drawerTrigger;
 document.querySelectorAll("[data-open-bencroft]").forEach(button => {
