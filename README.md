@@ -38,3 +38,4 @@
 프로필의 나이, 성별, 별명, 생일, 키, MBTI는 정보가 제공된 경우에만 배지로 추가합니다.
 
 Vercel 설정 참고: https://vercel.com/docs/builds/configure-a-build
+
