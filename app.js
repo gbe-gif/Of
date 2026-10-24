@@ -41,6 +41,21 @@ document.querySelectorAll(".archive-item img").forEach(image => {
   if (image.complete) image.naturalWidth ? markLoaded() : markMissing();
 });
 
+document.querySelectorAll(".support-card .support-visual img").forEach(image => {
+  const card = image.closest(".support-card");
+  const markLoaded = () => {
+    card.classList.add("is-portrait-loaded");
+    card.classList.remove("is-portrait-missing");
+  };
+  const markMissing = () => {
+    card.classList.remove("is-portrait-loaded");
+    card.classList.add("is-portrait-missing");
+  };
+  image.addEventListener("load", markLoaded);
+  image.addEventListener("error", markMissing);
+  if (image.complete) image.naturalWidth ? markLoaded() : markMissing();
+});
+
 const drawer = document.getElementById("bencroft-dialog");
 let drawerTrigger;
 document.querySelectorAll("[data-open-bencroft]").forEach(button => {
