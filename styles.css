@@ -38,7 +38,7 @@
 .support-visual::before{width:58%;height:auto;aspect-ratio:1}
 .support-visual::after{width:41%;height:auto;aspect-ratio:1}
 .support-visual>img{position:absolute;inset:0;z-index:2;width:100%;height:auto;display:block;opacity:0;transition:opacity .25s ease}
-.support-card.is-portrait-loaded .support-visual>img{opacity:1}
+.support-card.is-portrait-loaded .support-visual{aspect-ratio:auto}\n.support-card.is-portrait-loaded .support-visual>img{position:relative;opacity:1}
 .support-card.is-portrait-loaded .support-visual::before,.support-card.is-portrait-loaded .support-visual::after,.support-card.is-portrait-loaded .support-visual>span{display:none}
 .support-visual small{z-index:3;color:#f4ead7;text-shadow:0 1px 8px #101820}
 @media(max-width:1050px){.support-visual{height:auto}}
