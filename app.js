@@ -25,6 +25,22 @@ if (yearButtons.length) {
   yearButtons.forEach(button => button.addEventListener("click", () => showYear(button.dataset.year)));
 }
 
+
+document.querySelectorAll(".archive-item img").forEach(image => {
+  const item = image.closest(".archive-item");
+  const markLoaded = () => {
+    item.classList.add("is-loaded");
+    item.classList.remove("is-missing");
+  };
+  const markMissing = () => {
+    item.classList.remove("is-loaded");
+    item.classList.add("is-missing");
+  };
+  image.addEventListener("load", markLoaded);
+  image.addEventListener("error", markMissing);
+  if (image.complete) image.naturalWidth ? markLoaded() : markMissing();
+});
+
 const drawer = document.getElementById("bencroft-dialog");
 let drawerTrigger;
 document.querySelectorAll("[data-open-bencroft]").forEach(button => {
@@ -63,4 +79,5 @@ window.addEventListener("pageshow", event => {
     }
   } catch { /* Native browser history still works without storage. */ }
 });
+
 
