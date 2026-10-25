@@ -53,3 +53,11 @@
 .portrait-frame.is-dean-loaded .portrait-number,.portrait-frame.is-dean-loaded .portrait-name{z-index:3;color:#f3dfb2;text-shadow:0 1px 8px #0d1724}
 @media(max-width:1050px){.portrait-frame.is-dean-loaded{height:auto}}
 @media(max-width:700px){.portrait-frame.is-dean-loaded{height:auto}}
+
+/* Unlisted archive error card */
+.archive-error .archive-media{border-color:#8a5d61}
+.archive-error figcaption{border-color:#6c484e;color:#c7aeb0}
+.archive-error figcaption span:first-child{color:#d68d7c;letter-spacing:2.4px}
+.archive-error figcaption span:last-child{font-family:var(--serif);font-size:11px;letter-spacing:.2px}
+.archive-error .archive-pending{color:#d68d7c}
+.archive-error .archive-pending strong{font-size:31px;letter-spacing:3px}
