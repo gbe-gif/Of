@@ -41,6 +41,21 @@ document.querySelectorAll(".archive-item img").forEach(image => {
   if (image.complete) image.naturalWidth ? markLoaded() : markMissing();
 });
 
+document.querySelectorAll(".portrait-frame img").forEach(image => {
+  const frame = image.closest(".portrait-frame");
+  const markLoaded = () => {
+    frame.classList.add("is-dean-loaded");
+    frame.classList.remove("is-dean-missing");
+  };
+  const markMissing = () => {
+    frame.classList.remove("is-dean-loaded");
+    frame.classList.add("is-dean-missing");
+  };
+  image.addEventListener("load", markLoaded);
+  image.addEventListener("error", markMissing);
+  if (image.complete) image.naturalWidth ? markLoaded() : markMissing();
+});
+
 document.querySelectorAll(".support-card .support-visual img").forEach(image => {
   const card = image.closest(".support-card");
   const markLoaded = () => {
