@@ -61,3 +61,22 @@
 .archive-error figcaption span:last-child{font-family:var(--serif);font-size:11px;letter-spacing:.2px}
 .archive-error .archive-pending{color:#d68d7c}
 .archive-error .archive-pending strong{font-size:31px;letter-spacing:3px}
+
+/* Mobile cast profiles: large portrait beside identity, biography below. */
+@media(max-width:700px){
+  .support-card{grid-template-columns:minmax(0,1fr) 40%;column-gap:18px;row-gap:0;padding:24px 20px;align-items:start}
+  .support-copy{display:contents}
+  .support-card .support-visual{grid-column:2;grid-row:1/5;align-self:start;border:1px solid #c7bda9;min-height:0;width:100%}
+  .support-card .support-visual small{display:none}
+  .support-card .support-number{grid-column:1;grid-row:1;font-size:7px;letter-spacing:1px;line-height:1.7;overflow-wrap:anywhere}
+  .support-card h3{grid-column:1;grid-row:2;font-size:23px;line-height:1.4;margin:10px 0;word-break:keep-all}
+  .support-card .support-role{grid-column:1;grid-row:3;border:0;margin:0 0 14px;padding:0;font-size:11px;line-height:1.8;word-break:keep-all}
+  .support-card .profile-badges{grid-column:1;grid-row:4;align-self:start;margin:0;gap:6px}
+  .support-card .profile-badges span{font-size:9px;padding:4px 7px}
+  .support-card .copy-list{grid-column:1/-1;grid-row:5;min-width:0;border-top:1px solid var(--line);margin:22px 0 0;padding-top:16px}
+  .support-card .copy-list li{font-size:13px;line-height:1.9;margin:8px 0}
+}
+@media(max-width:360px){
+  .support-card{padding:20px 16px;column-gap:14px}
+  .support-card h3{font-size:21px}
+}
